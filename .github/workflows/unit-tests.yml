@@ -25,11 +25,11 @@ jobs:
     
     - name: Restaurar dependencias
       working-directory: ./api
-      run: dotnet restore --no-cache
+      run: dotnet restore
     
-    - name: Build
+    - name: Build solucao
       working-directory: ./api
-      run: dotnet build MinhasFinancas.Tests.Unit --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
     
     - name: Executar testes unitarios
       working-directory: ./api

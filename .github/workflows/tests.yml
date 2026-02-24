@@ -20,15 +20,15 @@ jobs:
     
     - name: Restaurar dependencias
       working-directory: ./api
-      run: dotnet restore --no-cache
+      run: dotnet restore
     
-    - name: Build projeto
+    - name: Build solucao
       working-directory: ./api
-      run: dotnet build MinhasFinancas.Tests.Unit --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
     
     - name: Executar testes
       working-directory: ./api
-      run: dotnet test MinhasFinancas.Tests.Unit --configuration Release --no-build --logger console --verbosity normal
+      run: dotnet test --configuration Release --no-build --logger console --verbosity normal
 
   e2e-tests:
     runs-on: ubuntu-latest
