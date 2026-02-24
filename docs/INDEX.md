@@ -8,7 +8,7 @@ DOCUMENTAÇÃO ORGANIZADA
 
 Pasta: /docs/
 
-1️⃣ RESUMO_EXECUTIVO.md
+[1] RESUMO_EXECUTIVO.md
    O que é: Visão geral completa do projeto
    Para quem: Gerentes, recrutadores, revisores
    Contém:
@@ -19,7 +19,7 @@ Pasta: /docs/
    - Conclusão e recomendações
    Tempo de leitura: 10 minutos
 
-2️⃣ PIRAMIDE_TESTES.md
+[2] PIRAMIDE_TESTES.md
    O que é: Estrutura da pirâmide de testes
    Para quem: Arquitetos, QA, desenvolvedores
    Contém:
@@ -31,7 +31,7 @@ Pasta: /docs/
    - Métricas
    Tempo de leitura: 8 minutos
 
-3️⃣ BUGS_E_ACHADOS.md
+[3] BUGS_E_ACHADOS.md
    O que é: Análise técnica de bugs e achados positivos
    Para quem: Arquitetos, code reviewers
    Contém:
@@ -43,7 +43,7 @@ Pasta: /docs/
    - Recomendações
    Tempo de leitura: 7 minutos
 
-4️⃣ COMO_EXECUTAR_TESTES.md
+[4] COMO_EXECUTAR_TESTES.md
    O que é: Guia prático para rodar testes
    Para quem: Desenvolvedores, QA, devops
    Contém:
@@ -55,7 +55,7 @@ Pasta: /docs/
    - Estrutura dos mocks e asserts
    Tempo de leitura: 12 minutos
 
-5️⃣ ESTRUTURA_COMPLETA_TESTES.md
+[5] ESTRUTURA_COMPLETA_TESTES.md
    O que é: Documentação técnica aprofundada
    Para quem: Desenvolvedores experientes, arquitetos
    Contém:
@@ -75,7 +75,7 @@ TESTES UNITÁRIOS IMPLEMENTADOS
 ===============================
 
 Total: 31 testes
-Status: 100% PASSANDO ✓
+Status: 100% PASSANDO
 Tempo: ~2.8 segundos
 Localização: api/MinhasFinancas.Tests.Unit/
 
@@ -88,16 +88,16 @@ Distribuição:
 
 Regras de Negócio Cobertas:
 
-✓ Menores não podem registrar receitas
+[OK] Menores não podem registrar receitas
   - 1 teste unitário na entidade
   - 1 teste unitário no serviço
   - Status: PASSA
 
-✓ Categorias respeitam sua finalidade
+[OK] Categorias respeitam sua finalidade
   - 8 testes de validação PermiteTipo
   - Status: PASSA (todas as combinações)
 
-✓ Cálculo correto de maioridade
+[OK] Cálculo correto de maioridade
   - 3+ testes para validação de idade
   - Testado: 17, 18, 20+ anos
   - Status: PASSA
@@ -160,7 +160,7 @@ COMO COMEÇAR
    dotnet test
    
    Esperado:
-   ✓ Aprovado 31 testes... Tempo total: 2,79 segundos
+   [OK] Aprovado 31 testes... Tempo total: 2,79 segundos
 
 3. REVISAR CÓDIGO (30 min)
    Ir para: api/MinhasFinancas.Tests.Unit/
@@ -209,10 +209,10 @@ Qualquer dúvida técnica, revisar:
 STATUS FINAL
 ============
 
-Testes Unitários: ✓ COMPLETO (31/31)
-Testes Integração: ⚠ ESTRUTURA PRONTA
-Testes E2E: 🗓️ PLANEJADO
-CI/CD: 🗓️ PLANEJADO
+Testes Unitários: [COMPLETO] (31/31)
+Testes Integração: [ESTRUTURA PRONTA]
+Testes E2E: [PLANEJADO]
+CI/CD: [PLANEJADO]
 
 O projeto está pronto para execução e review imediato.
 
