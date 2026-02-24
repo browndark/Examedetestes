@@ -1,0 +1,41 @@
+# Binaries
+bin/
+obj/
+dist/
+
+# Visual Studio
+.vs/
+.vscode/
+*.user
+*.suo
+*.sln.docstates
+*.sln.vs/
+
+# Node
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment files
+.env
+.env.local
+
+# Build outputs
+out/
+build/
+
+# IDE
+.idea/
+*.swp
+*.swo
+
+# macOS
+.DS_Store
+
+# Dependencies
+packages/
+.nuget/
+
+# Test results
+TestResults/
+*.trx
