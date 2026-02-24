@@ -20,7 +20,7 @@ A aplicação MinhasFinancas é um sistema de análise de finanças pessoais que
 
 ---
 
-## 2. TECNOLOGIAS (OBRIGATÓRIO)
+## 2. TECNOLOGIAS
 
 ### Backend Testing Stack
 
