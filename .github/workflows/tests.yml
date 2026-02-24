@@ -1,4 +1,4 @@
-name: Testes Automáticos
+name: Testes Automaticos
 
 on:
   push:
@@ -10,26 +10,25 @@ jobs:
   unit-tests:
     runs-on: ubuntu-latest
     
-    strategy:
-      matrix:
-        dotnet-version: ['9.0.x']
-    
     steps:
     - uses: actions/checkout@v3
     
-    - name: Setup .NET
+    - name: Setup .NET 9
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: ${{ matrix.dotnet-version }}
+        dotnet-version: '9.0.0'
     
-    - name: Restaurar dependências
-      run: dotnet restore api/MinhasFinancas.slnx
+    - name: Restaurar dependencias
+      working-directory: ./api
+      run: dotnet restore --no-cache
     
-    - name: Build
-      run: dotnet build api/MinhasFinancas.slnx --configuration Release --no-restore
+    - name: Build projeto
+      working-directory: ./api
+      run: dotnet build MinhasFinancas.Tests.Unit --configuration Release --no-restore
     
-    - name: Executar Testes Unitários
-      run: dotnet test api/MinhasFinancas.Tests.Unit --configuration Release --no-build --logger "console;verbosity=detailed"
+    - name: Executar testes
+      working-directory: ./api
+      run: dotnet test MinhasFinancas.Tests.Unit --configuration Release --no-build --logger console --verbosity normal
 
   e2e-tests:
     runs-on: ubuntu-latest
@@ -38,8 +37,8 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Verificar testes E2E
-      run: echo "Testes E2E - Infraestrutura pronta, aguardando implementação de testes Playwright"
+    - name: Status E2E
+      run: echo "Testes E2E - Infraestrutura pronta (aguardando testes Playwright)"
 
   code-quality:
     runs-on: ubuntu-latest
@@ -47,5 +46,5 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Informar status de qualidade
-      run: echo "Infraestrutura de qualidade de código pronta (SonarQube opcional)"
+    - name: Status qualidade
+      run: echo "Qualidade de codigo - Pronto para SonarQube"

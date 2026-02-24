@@ -1,4 +1,4 @@
-name: Testes Unitários (Quick)
+name: Testes Unitarios (Quick)
 
 on:
   push:
@@ -18,20 +18,24 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     
-    - name: Setup .NET 9.0
+    - name: Setup .NET 9
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '9.0.x'
+        dotnet-version: '9.0.0'
     
-    - name: Restaurar dependências
-      run: dotnet restore api/MinhasFinancas.slnx
+    - name: Restaurar dependencias
+      working-directory: ./api
+      run: dotnet restore --no-cache
     
     - name: Build
-      run: dotnet build api/MinhasFinancas.slnx --configuration Release --no-restore
+      working-directory: ./api
+      run: dotnet build MinhasFinancas.Tests.Unit --configuration Release --no-restore
     
-    - name: Executar Testes Unitários
-      run: dotnet test api/MinhasFinancas.Tests.Unit --configuration Release --no-build --logger "console;verbosity=detailed"
+    - name: Executar testes unitarios
+      working-directory: ./api
+      run: dotnet test MinhasFinancas.Tests.Unit --configuration Release --no-build --logger console --verbosity normal
     
-    - name: Executar Testes de Integração
-      run: dotnet test api/MinhasFinancas.Tests.Integration --configuration Release --no-build --logger "console;verbosity=detailed"
+    - name: Executar testes integracao
+      working-directory: ./api
+      run: dotnet test MinhasFinancas.Tests.Integration --configuration Release --no-build --logger console --verbosity normal
       continue-on-error: true
