@@ -116,7 +116,7 @@ A aplicação MinhasFinancas é um sistema de análise de finanças pessoais que
 
 ### Documentação Técnica
 
-- **8 Diagramas PlantUML**
+- **8 Diagramas**
   - Arquitetura do sistema
   - Classes e relacionamentos
   - Fluxos de transação
