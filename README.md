@@ -126,7 +126,7 @@ A aplicação MinhasFinancas é um sistema de análise de finanças pessoais que
   
 - **Relatórios Técnicos**
   - Análise de 6 gaps identificados
-  - Documentação de 4 erros encontrados e corrigidos
+  - Documentação de 4 erros encontrados e documentados
   - Roadmap para fases 2 e 3 (E2E + CI/CD)
 
 ---
@@ -404,11 +404,11 @@ Taxa: 1.360 testes/segundo (extremamente rápido)
 
 ### Erros Encontrados 
 1. **Erro #1**: Nomenclatura incorreta de PagedResult
-   - **Status**: Corrigido
+   - **Status**: Documentado
    - **Impacto**: Zero
 
 2. **Erro #2**: Propriedades read-only não atribuíveis
-   - **Status**: Corrigido
+   - **Status**: Documentado
    - **Impacto**: Zero
 
 3. **Erro #3**: Validação de enum values
