@@ -22,9 +22,16 @@ public class TransacaoBusinnessRulesIntegrationTests : IAsyncLifetime
     {
         var options = new DbContextOptionsBuilder<MinhasFinancasDbContext>()
             .UseSqlite("Data Source=:memory:")
+            .EnableSensitiveDataLogging()
+            .LogTo(Console.WriteLine)
             .Options;
 
         _context = new MinhasFinancasDbContext(options);
+        
+        // Abrir conexão
+        await _context.Database.OpenConnectionAsync();
+        
+        // Criar as tabelas
         await _context.Database.EnsureCreatedAsync();
 
         _unitOfWork = new UnitOfWork(_context);
@@ -33,8 +40,11 @@ public class TransacaoBusinnessRulesIntegrationTests : IAsyncLifetime
 
     public async Task DisposeAsync()
     {
-        await _context.Database.EnsureDeletedAsync();
-        await _context.DisposeAsync();
+        if (_context != null)
+        {
+            await _context.Database.EnsureDeletedAsync();
+            await _context.DisposeAsync();
+        }
     }
 
     [Fact]

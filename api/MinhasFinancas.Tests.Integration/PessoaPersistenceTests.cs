@@ -16,16 +16,26 @@ public class PessoaPersistenceTests : IAsyncLifetime
     {
         var options = new DbContextOptionsBuilder<MinhasFinancasDbContext>()
             .UseSqlite("Data Source=:memory:")
+            .EnableSensitiveDataLogging()
+            .LogTo(Console.WriteLine)
             .Options;
 
         _context = new MinhasFinancasDbContext(options);
+        
+        // Abrir conexão
+        await _context.Database.OpenConnectionAsync();
+        
+        // Criar as tabelas
         await _context.Database.EnsureCreatedAsync();
     }
 
     public async Task DisposeAsync()
     {
-        await _context.Database.EnsureDeletedAsync();
-        await _context.DisposeAsync();
+        if (_context != null)
+        {
+            await _context.Database.EnsureDeletedAsync();
+            await _context.DisposeAsync();
+        }
     }
 
     [Fact]
