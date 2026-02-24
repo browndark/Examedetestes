@@ -441,18 +441,6 @@ Taxa: 1.360 testes/segundo (extremamente rápido)
 
 ---
 
-## RESTRIÇÕES OBSERVADAS
-
-✓ Não foi alterado o código da aplicação (apenas testes)  
-✓ Repositório contém apenas suite de testes  
-✓ Sem upload de código de produção  
-✓ Foco em regras críticas, não cobertura percentual  
-✓ Documentação profissional (sem emojis)  
-✓ Bugs encontrados documentados separadamente  
-✓ Zero alterações em MinhasFinancas.API, Application, Domain, Infrastructure  
-
----
-
 ## CONCLUSÃO
 
 Projeto entregue com **excelência técnica e completude**:
